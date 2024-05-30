@@ -81,14 +81,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COL_PHONE, phone);
 
         String selection = COL_ID + " = ?";
-        String[] selectionArgs = { String.valueOf(id) };
+        // String[] selectionArgs = { String.valueOf(id) };
+        String[] selectionArgs = {String.valueOf(id)};
 
-        int count = db.update(
-                TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-
+//        int count = db.update(
+//                TABLE_NAME,
+//                values,
+//                selection,
+//                selectionArgs);
+//
+//        db.close();
+        int count = db.update(TABLE_NAME, values, "id=?", new String[]{String.valueOf(id)});
         db.close();
         if( count == -1){
             return false;
