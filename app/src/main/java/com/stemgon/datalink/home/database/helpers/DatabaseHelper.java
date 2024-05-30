@@ -56,13 +56,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public List<User> getAllData() {
         List<User> dataList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM my_table", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM users", null);
 
         if (cursor.moveToFirst()) {
             do {
                 Integer id = cursor.getInt(0);
                 String email = cursor.getString(1);
-                String phone = String.valueOf(cursor.getInt(2));
+                String phone = cursor.getString(2);
+//                String phone = String.valueOf(cursor.getInt(2));
                 dataList.add(new User(id, email, phone));
 //                dataList.add("ID: " + id + ", Name: " + name + ", Age: " + age);
             } while (cursor.moveToNext());

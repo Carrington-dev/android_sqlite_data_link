@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.stemgon.datalink.R;
@@ -19,6 +21,7 @@ import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
     RecyclerView userListRecyclerView;
+    ProgressBar progressBar;
     DatabaseHelper myDb;
 
     @SuppressLint("MissingInflatedId")
@@ -28,12 +31,15 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         userListRecyclerView = findViewById(R.id.userListRecyclerView);
+        progressBar = findViewById(R.id.progressLoadingId);
         myDb = new DatabaseHelper(this);
 
-        ArrayList<User> users = new ArrayList<User>();
-        for (int i = 0; i < 50; i++) {
-            users.add(new User(i, "crn96m@gmail.com.com", "0677352242"));
-        }
+        progressBar.setVisibility(View.VISIBLE);
+        ArrayList<User> users = (ArrayList<User>) myDb.getAllData();
+        progressBar.setVisibility(View.GONE);
+
+
+        Log.i("Info", String.valueOf(myDb.getAllData().size()));
 
         UserAdapter userAdapter = new UserAdapter(users, ListActivity.this);
         userListRecyclerView.setLayoutManager(new LinearLayoutManager(ListActivity.this));

@@ -47,18 +47,27 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-//                switch (id) {
-//                    case R.id.nav_home:
-//                        Toast.makeText(HomeActivity.this, "Home", Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case R.id.nav_profile:
-//                        Toast.makeText(HomeActivity.this, "Profile", Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case R.id.nav_settings:
-//                        Toast.makeText(HomeActivity.this, "Settings", Toast.LENGTH_SHORT).show();
-//                        break;
-//                    default:
-//                        break;
+                if( id == R.id.nav_home){
+                    Toast.makeText(HomeActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                }else if(id == R.id.nav_update){
+                    Toast.makeText(HomeActivity.this, "Profile", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(HomeActivity.this, UpdateActivity.class);
+                    startActivity(intent);
+                }else if(id == R.id.nav_all_users){
+                    Toast.makeText(HomeActivity.this, "Profile", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(HomeActivity.this, ListActivity.class);
+                    startActivity(intent);
+
+                }else if(id == R.id.nav_add){
+                    Toast.makeText(HomeActivity.this, "Add user", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(HomeActivity.this, AddActivity.class);
+                    startActivity(intent);
+
+                }else{
+
+                }
 
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
