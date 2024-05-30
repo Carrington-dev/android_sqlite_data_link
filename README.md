@@ -19,6 +19,12 @@ This repository contains an Android application demonstrating the use of SQLite 
 ![Main Screen](screenshots/logo.png)
 ![Add Record](screenshots/logo.png)
 ![View Records](screenshots/logo.png)
+![View Side Bar Menu](screenshots/s1.png)
+![View HomeAcrtivity](screenshots/s2.png)
+![View Add User detail](screenshots/s3.png)
+![View List RecyclerView](screenshots/s4.png)
+![View Update Records](screenshots/s5.png)
+![View Dialogue Warning](screenshots/s6.png)
 
 ## Installation
 
