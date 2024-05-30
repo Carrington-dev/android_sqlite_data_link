@@ -51,16 +51,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/phone"
-            android:textStyle="bold"
+            android:textStyle="italic|normal"
             android:textSize="12sp"
             android:padding="5dp"
             />
     </LinearLayout>
 
     <ImageView
-        android:layout_toRightOf="@id/infoId"
         android:id="@+id/iconID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_stemgon_launcher" />
+        android:src="@drawable/baseline_delete_24" />
 </LinearLayout>
