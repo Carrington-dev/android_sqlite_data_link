@@ -16,15 +16,15 @@ This repository contains an Android application demonstrating the use of SQLite 
 
 ## Screenshots
 
-![Main Screen](screenshots/main_screen.png)
-![Add Record](screenshots/add_record.png)
-![View Records](screenshots/view_records.png)
+![Main Screen](screenshots/logo.png)
+![Add Record](screenshots/logo.png)
+![View Records](screenshots/logo.png)
 
 ## Installation
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/yourusername/sqlite-android-java.git
+   git clone https://github.com/carrington-dev/android_sqlite_data_link.git
    ```
 2. **Open in Android Studio**:
     - Open Android Studio.
