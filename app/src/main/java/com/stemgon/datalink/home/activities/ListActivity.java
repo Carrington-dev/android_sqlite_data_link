@@ -51,7 +51,9 @@ public class ListActivity extends AppCompatActivity {
             public void onItemClick(View view, int position) {
                 Toast.makeText(ListActivity.this, "Clicked at position: " + position, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(ListActivity.this, UpdateActivity.class);
-                intent.putExtra("updateID", position);
+                intent.putExtra("updateID", users.get(position).getId());
+                intent.putExtra("updateEMAIL", users.get(position).getEmail());
+                intent.putExtra("updatePHONE", users.get(position).getPhone());
                 startActivity(intent);
             }
         });

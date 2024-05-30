@@ -38,10 +38,11 @@ public class UpdateActivity extends AppCompatActivity {
         phoneEdText = findViewById(R.id.editTextPhone);
         Intent intent = getIntent();
 
-        ArrayList<User> users = (ArrayList<User>) myDb.getAllData();
         int id = intent.getIntExtra("updateID", 0);
-        emailEdtText.setText(users.get(id).getEmail());
-        phoneEdText.setText(users.get(id).getPhone());
+        String email = intent.getStringExtra("updateEMAIL");
+        String phone = intent.getStringExtra("updatePHONE");
+        emailEdtText.setText(email);
+        phoneEdText.setText(phone);
 
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,84 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"
-    android:weightSum="10"
-    android:layout_margin="10dp">
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    android:background="@drawable/car_back"
+
+    >
 
     <LinearLayout
-        android:id="@+id/idID"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="end|center"
-        android:layout_margin="10dp"
-        android:layout_weight="1"
-        >
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
-        <TextView
-            android:id="@+id/id"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/idID"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
+            android:orientation="vertical"
+            android:gravity="end|center"
+            android:layout_margin="10dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:fontFamily="@font/proxima_nova_black_bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/infoId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="8">
+
+            <TextView
+                android:id="@+id/emailId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stemgon_stemgon_com"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:fontFamily="@font/proxima_nova_black_bold" />
+
+            <TextView
+
+                android:id="@+id/phoneId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone"
+                android:textStyle="italic|normal"
+                android:textSize="12sp"
+                android:padding="5dp"
+                android:fontFamily="@font/proxima_nova_black_regular_italic"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/imageLLID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end"
+            android:padding="10dp"
+            android:layout_weight="1"
             android:layout_gravity="center"
-            />
+            >
+
+            <ImageView
+                android:id="@+id/iconID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src="@drawable/baseline_delete_24" />
+
+        </LinearLayout>
+        '
 
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/infoId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="8"
-        >
-
-        <TextView
-            android:id="@+id/emialId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/stemgon_stemgon_com"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:padding="5dp"
-            />
-
-        <TextView
-
-            android:id="@+id/phoneId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/phone"
-            android:textStyle="italic|normal"
-            android:textSize="12sp"
-            android:padding="5dp"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/imageLLID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="end"
-        android:padding="10dp"
-        android:layout_weight="1"
-
-        >
-
-        <ImageView
-            android:id="@+id/iconID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:src="@drawable/baseline_delete_24" />
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</RelativeLayout>

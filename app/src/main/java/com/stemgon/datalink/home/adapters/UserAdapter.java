@@ -47,6 +47,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyUserHolder> 
         holder.phone.setText("Phone Number: " + userList.get(position).getPhone());
         holder.id.setText(userList.get(position).getId().toString());
         holder.email.setText(userList.get(position).getEmail());
+
+        /*
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        */
     }
 
     //    @Override
@@ -76,7 +85,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyUserHolder> 
         MyUserHolder(View itemView) {
             super(itemView);
             id = itemView.findViewById(R.id.id);
-            email = itemView.findViewById(R.id.emialId);
+            email = itemView.findViewById(R.id.emailId);
             phone = itemView.findViewById(R.id.phoneId);
 
             itemView.setOnClickListener(this);

@@ -91,9 +91,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //                selectionArgs);
 //
 //        db.close();
-        int count = db.update(TABLE_NAME, values, "id=?", new String[]{String.valueOf(id)});
+        long count = db.update(TABLE_NAME, values, "id=?", new String[]{String.valueOf(id)});
         db.close();
-        if( count == -1){
+        if( count < 0){
             return false;
         }
         return true;

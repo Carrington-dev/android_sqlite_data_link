@@ -4,4 +4,7 @@
     <string name="phone">067 734 2242</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="update">Update user details</string>
+    <string name="update_btn">Update</string>
+    <string name="company">Stemgon</string>
 </resources>
