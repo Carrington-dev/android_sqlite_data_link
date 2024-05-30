@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,18 +15,23 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.stemgon.datalink.R;
+import com.stemgon.datalink.home.database.helpers.DatabaseHelper;
+import com.stemgon.datalink.home.models.User;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class AddActivity extends AppCompatActivity {
     Button addBtn;
     EditText emailEdtText, phoneEdText;
+    DatabaseHelper myDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
+        myDb = new DatabaseHelper(this);
         addBtn = findViewById(R.id.addBtn);
         emailEdtText = findViewById(R.id.editTextTextEmailAddress);
         phoneEdText = findViewById(R.id.editTextPhone);
@@ -59,6 +65,7 @@ public class AddActivity extends AppCompatActivity {
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                boolean inserted = insertData(email, phone);
                 Toast.makeText(AddActivity.this, "Your data was stored", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(AddActivity.this, ListActivity.class);
                 startActivity(intent);
@@ -72,6 +79,15 @@ public class AddActivity extends AppCompatActivity {
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    private boolean insertData(String email, String phone) {
+        boolean isInserted = myDb.insertData(email, phone);
+        if (isInserted)
+            Toast.makeText(AddActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
+        else
+            Toast.makeText(AddActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
+        return isInserted;
     }
 
 
@@ -91,4 +107,6 @@ public class AddActivity extends AppCompatActivity {
             return false;
         return pat.matcher(email).matches();
     }
+
+
 }

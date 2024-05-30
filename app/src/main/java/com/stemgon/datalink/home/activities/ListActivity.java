@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.stemgon.datalink.R;
 import com.stemgon.datalink.home.adapters.UserAdapter;
+import com.stemgon.datalink.home.database.helpers.DatabaseHelper;
 import com.stemgon.datalink.home.listeners.UserClickLister;
 import com.stemgon.datalink.home.models.User;
 
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
     RecyclerView userListRecyclerView;
+    DatabaseHelper myDb;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -26,6 +28,7 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         userListRecyclerView = findViewById(R.id.userListRecyclerView);
+        myDb = new DatabaseHelper(this);
 
         ArrayList<User> users = new ArrayList<User>();
         for (int i = 0; i < 50; i++) {
