@@ -51,11 +51,18 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.makeText(HomeActivity.this, "Home", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
                     startActivity(intent);
-                }else if(id == R.id.nav_update){
+                }
+                /*
+                else if(id == R.id.nav_update){
                     Toast.makeText(HomeActivity.this, "Profile", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(HomeActivity.this, UpdateActivity.class);
+                    intent.putExtra("updateID", 123);
                     startActivity(intent);
-                }else if(id == R.id.nav_all_users){
+
+                }
+                *
+                 */
+                else if(id == R.id.nav_all_users){
                     Toast.makeText(HomeActivity.this, "Profile", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(HomeActivity.this, ListActivity.class);
                     startActivity(intent);

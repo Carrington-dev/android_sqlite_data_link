@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -49,6 +50,9 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 Toast.makeText(ListActivity.this, "Clicked at position: " + position, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(ListActivity.this, UpdateActivity.class);
+                intent.putExtra("updateID", position);
+                startActivity(intent);
             }
         });
 

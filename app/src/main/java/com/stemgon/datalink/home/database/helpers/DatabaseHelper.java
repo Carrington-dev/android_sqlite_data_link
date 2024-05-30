@@ -73,5 +73,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return dataList;
     }
 
+    public boolean updateItem(int id, String email, String phone) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COL_NAME, email);
+        values.put(COL_PHONE, phone);
+
+        String selection = COL_ID + " = ?";
+        String[] selectionArgs = { String.valueOf(id) };
+
+        int count = db.update(
+                TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+
+        db.close();
+        if( count == -1){
+            return false;
+        }
+        return true;
+    }
+
+
+
 
 }
