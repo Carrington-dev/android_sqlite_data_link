@@ -100,6 +100,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
-
+    public boolean deleteItem(int position) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        long count = db.delete(TABLE_NAME, "id=?", new String[]{String.valueOf(position)});
+        if( count < 0){
+            return false;
+        }
+        return true;
+    }
 }

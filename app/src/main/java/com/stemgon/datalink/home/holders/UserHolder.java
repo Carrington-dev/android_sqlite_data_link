@@ -1,6 +1,7 @@
 package com.stemgon.datalink.home.holders;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,14 +14,19 @@ public class UserHolder extends RecyclerView.ViewHolder implements View.OnClickL
     public TextView id, email, phone;
     public UserClickLister userClickLister;
 
+    public ImageView deleteIcon;
+
     public UserHolder(@NonNull View itemView) {
         super(itemView);
 
         id = itemView.findViewById(R.id.id);
         email = itemView.findViewById(R.id.emailId);
         phone = itemView.findViewById(R.id.phoneId);
+        deleteIcon = itemView.findViewById(R.id.iconID);
 
         itemView.setOnClickListener(this);
+
+
     }
 
 

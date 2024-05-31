@@ -40,7 +40,7 @@ public class ListActivity extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
 
 
-        Log.i("Info", String.valueOf(myDb.getAllData().size()));
+        //Log.i("Info", String.valueOf(myDb.getAllData().size()));
 
         UserAdapter userAdapter = new UserAdapter(users, ListActivity.this);
         userListRecyclerView.setLayoutManager(new LinearLayoutManager(ListActivity.this));
@@ -49,7 +49,7 @@ public class ListActivity extends AppCompatActivity {
         userAdapter.setClickListener(new UserClickLister() {
             @Override
             public void onItemClick(View view, int position) {
-                Toast.makeText(ListActivity.this, "Clicked at position: " + position, Toast.LENGTH_LONG).show();
+                // Toast.makeText(ListActivity.this, "Clicked at position: " + position, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(ListActivity.this, UpdateActivity.class);
                 intent.putExtra("updateID", users.get(position).getId());
                 intent.putExtra("updateEMAIL", users.get(position).getEmail());
